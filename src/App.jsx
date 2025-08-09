@@ -7,12 +7,14 @@ import Projects from "./Components/Hero/Projects"
 import Skills from "./Components/Hero/Skills"
 import Contact from "./Components/Hero/Contact"
 import Experience from "./Components/Hero/Experience"
+import Home from "./Components/Hero/Home"
 
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Layout />}>
-        <Route path="" element={<About />} />
+        <Route path="" element={<Home />} />
+        <Route path="about" element={<About />} />
         <Route path="experience" element={<Experience />} />
         <Route path="projects" element={<Projects />} />
         <Route path="skills" element={<Skills />} />
