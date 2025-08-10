@@ -6,46 +6,56 @@ import { NavLink } from "react-router-dom";
 
 const About = () => {
   return (
-    <section className="min-h-screen flex flex-col md:flex-row items-center justify-center bg-gradient-to-br from-[#050a1f] via-[#0a0f1e] to-[#0e162f] text-white px-6 md:px-20 py-12 overflow-hidden">
+    <section className="min-h-screen flex flex-col lg:flex-row items-center justify-center bg-gradient-to-br from-[#050a1f] via-[#0a0f1e] to-[#0e162f] text-white px-6 lg:px-20 py-12 overflow-hidden lg:h-screen">
       
       {/* Left - Neural Mesh */}
       <motion.div
-        className="w-full md:w-1/2 flex justify-center items-center h-96 md:h-[500px]"
+        className="w-full lg:w-1/2 flex justify-center items-center h-96 lg:h-[500px]"
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
       >
-        <div className="w-full h-full">
-          <AboutMesh scale={1.4} /> {/* Pass scale prop to make image bigger */}
+        <div className="w-full h-screen">
+          <AboutMesh scale={0.9} /> {/* Pass scale prop to make image bigger */}
         </div>
       </motion.div>
 
       {/* Right - Text */}
       <motion.div
-        className="w-full md:w-1/2 space-y-6 md:pl-12 mt-10 md:mt-0"
+        className="w-full lg:w-1/2 space-y-6 lg:pl-12 mt-10 md:mt-0"
         initial={{ opacity: 0, x: 50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, delay: 0.2 }}
       >
-        <h2 className="text-3xl md:text-4xl font-bold leading-snug">
+        <h2 className="w-full text-3xl lg:text-4xl font-bold leading-snug">
           From Data to Decisions —{" "}
           <span className="bg-gradient-to-r from-[#00f0ff] via-[#7a5cff] to-[#ff4ecd] text-transparent bg-clip-text">
             Crafting Intelligent Solutions
           </span>
         </h2>
-        <p className="text-gray-300">
+        <motion.p 
+        className="text-gray-300"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        >
           I’m an AI/ML/DL engineer specializing in transforming complex data into actionable insights. 
           My focus is on developing cutting-edge models that drive business value and innovation.
-        </p>
+        </motion.p>
 
         {/* Tags */}
-        <div className="flex flex-wrap gap-3">
+        <motion.div 
+        className="flex flex-wrap gap-3"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        >
           {["Deep Learning", "Predictive Analytics", "Computer Vision", "NLP"].map((tag, i) => (
             <span key={i} className="px-3 py-1 bg-[#10172a] rounded-full text-sm border border-[#1e2a4a]">
               {tag}
             </span>
           ))}
-        </div>
+        </motion.div>
 
         {/* Stats */}
         <div className="flex gap-10 mt-4">

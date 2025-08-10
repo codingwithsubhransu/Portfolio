@@ -42,11 +42,22 @@ const Navbar = () => {
             <ul className='space-x-4 hidden md:flex'>
                 {nav_links.map((link, index) => (
                     <li key={index}>
-                        <NavLink to={link.href} className={({isActive}) =>
-                                        `text-gray-800 dark:text-gray-200 hover:shadow-xl/30 transition-all transform hover:text-shadow-[0_0_15px_#413bff] ${isActive ? 'border-b-[#413bff] border-b-2 shadow-xl' : 'hover:border-b-2 hover:border-b-[#5855ad] ease-in text-shadow-2xs'}`
-                                    }>
-                            {link.name}
+                        <NavLink
+                        to={link.href}
+                        className={({ isActive }) =>
+                            `relative inline-block px-1 transition-all duration-300 
+                            text-gray-800 dark:text-gray-200 
+                            after:content-[''] after:absolute after:left-0 after:bottom-[-4px] 
+                            after:w-full after:h-[2px] after:bg-[#413bff] 
+                            after:scale-x-0 after:origin-right after:transition-transform after:duration-300
+                            hover:after:scale-x-100 hover:after:origin-left
+                            hover:text-[#413bff] hover:tracking-wide
+                            ${isActive ? 'after:scale-x-100 text-[#413bff] font-semibold' : ''}`
+                        }
+                        >
+                        {link.name}
                         </NavLink>
+
                     </li>
                 ))}
             </ul>
