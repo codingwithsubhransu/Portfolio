@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 
 const About = () => {
   return (
-    <section className="min-h-screen flex flex-col lg:flex-row items-center justify-center bg-gradient-to-br from-[#050a1f] via-[#0a0f1e] to-[#0e162f] text-white px-6 lg:px-20 py-12 overflow-hidden lg:h-screen">
+    <section className="min-h-screen flex flex-col lg:flex-row items-center justify-center bg-gradient-to-b from-[#0a0a0a] to-[#111] text-white px-6 lg:px-20 py-12 overflow-hidden lg:h-screen">
       
       {/* Left - Neural Mesh */}
       <motion.div
